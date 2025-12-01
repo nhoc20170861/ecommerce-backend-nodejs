@@ -1,6 +1,7 @@
 {
   "name": "ecommerce-backend-nodejs",
   "version": "1.0.0",
+  "type": "module",
   "description": "",
   "main": "server.js",
   "directories": {
@@ -19,5 +20,14 @@
   "bugs": {
     "url": "https://github.com/nhoc20170861/ecommerce-backend-nodejs/issues"
   },
-  "homepage": "https://github.com/nhoc20170861/ecommerce-backend-nodejs#readme"
+  "homepage": "https://github.com/nhoc20170861/ecommerce-backend-nodejs#readme",
+  "dependencies": {
+    "compression": "^1.8.1",
+    "express": "^5.1.0",
+    "mongoose": "^9.0.0"
+  },
+  "devDependencies": {
+    "helmet": "^8.1.0",
+    "morgan": "^1.10.1"
+  }
 }
