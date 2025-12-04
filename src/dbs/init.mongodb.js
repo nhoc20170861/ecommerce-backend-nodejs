@@ -2,10 +2,11 @@
 
 import mongoose from 'mongoose'
 import { countConnect } from '../helpers/check.connect.js'
-
-const {db: {host, port, name}} =  import('../configs/config.mongodb.js')
+import config from '../configs/config.mongodb.js'
+const {db: {host, port, name}} =  config
 
 const MONGODB_URI = `mongodb://${host}:${port}/${name}`
+console.log("🚀 ~ MONGODB_URI:", MONGODB_URI)
 // const MONGODB_URI = `mongodb+srv://quanpa2508:<db_password>@cluster0.5bsd6d2.mongodb.net/?appName=Cluster0`
 class Database {
     constructor() {
@@ -21,7 +22,7 @@ class Database {
         mongoose.connect(MONGODB_URI, {maxPoolSize: 50}).then(_ => {
             console.log('Connected Mongodb Success', countConnect())
         }).catch(err => {
-            console.Error('Connected Mongodb Failed', err)
+            console.error('Connected Mongodb Failed', err)
         })
         
     }

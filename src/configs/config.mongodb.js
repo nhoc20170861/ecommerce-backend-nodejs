@@ -1,31 +1,34 @@
-'use strict'
+"use strict";
 
 const dev = {
-    app: {
-        host: 'localhost',
-        port: 3000,
-    },
-    db: {
-        host: 'localhost',
-        port: 27017,
-        name: 'dbDev'
-    }
-}
+  app: {
+    host: "localhost",
+    port: process.env.DEV_APP_PORT || 3000,
+  },
+  db: {
+    host: process.env.DEV_DB_HOST || "localhost",
+    port: process.env.DEV_DB_PORT || 27017,
+    name: process.env.DEV_DB_NAME || "dbDev",
+  },
+};
 const product = {
-    app: {
-        host: 'localhost',
-        port: 5000
-    },
-    db: {
-        host: 'localhost',
-        port: 27017,
-        name: 'dbPro'
-    }
-}
+  app: {
+    host: "localhost",
+    port: process.env.PRO_APP_PORT || 5000,
+  },
+  db: {
+    host: process.env.PRO_DB_HOST || "localhost",
+    port: process.env.PRO_DB_PORT || 27017,
+    name: process.env.PRO_DB_NAME || "dbPro",
+  },
+};
 const config = {
-    dev, product
-}
+  dev,
+  product,
+};
 
-const env = process.env.NODE_ENV || 'dev'
+const env = process.env.NODE_ENV || "dev";
 
-export default config[env]
+console.log("🚀 ~  config[env]:",  config[env], env)
+
+export default config[env];
